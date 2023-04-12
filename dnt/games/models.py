@@ -76,3 +76,7 @@ class Game(models.Model):
     @property
     def players(self):
         return list(self.results.keys())
+
+    def __str__(self):
+        return self.type
+
