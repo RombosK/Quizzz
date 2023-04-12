@@ -1,5 +1,14 @@
+{% extends "main/base.html" %}
+{% load static %}
 
-{% block content %}
+{% block title %}
+    Профиль
+{% endblock %}
+
+{% block body %}
+    {% include "main/includes/inc-info.html" %}
+
+
 <div class="container_auth">
 
     <h1>Профиль игрока.</h1>
