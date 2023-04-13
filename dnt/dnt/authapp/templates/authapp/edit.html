@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    {{ title|title }}
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'auth:edit' %}" class="form_settings" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1 class="auth_h1">Edit</h1>
+    {% for field in edit_form %}
+    <div class="field_wrapper">
+        {% if field.label != "Password" %}
+        {{ field.label_tag }}{{ field }}{{ field.errors }}
+        {% endif %}
+    </div>
+    {% endfor %}
+    {% for field in edit_profile_form %}
+    <div class="field_wrapper">
+        {{ field.label_tag }}{{ field }}{{ field.errors }}
+    </div>
+    {% endfor %}
+    <input type="submit" class="auth_button" value="Save">
+</form>
+{% endblock %}
+
