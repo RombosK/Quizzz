@@ -1,5 +1,6 @@
 import openai
-openai.api_key = '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'
+from secret import OPEN_AI
+openai.api_key = OPEN_AI
 response = openai.Image.create(
   prompt="лес закат",
   n=1,
