@@ -7,8 +7,6 @@
 
 {% block body %}
     {% include "main/includes/inc-info.html" %}
-
-<body>
     <h1>Мои игры:</h1>
     <table>
   <thead>
@@ -19,19 +17,17 @@
   </thead>
   <tbody>
   {% if games %}
-      {% for game in games %}
+        {% for game in games %}
         <tr>
-        <td>{{ game.type }}</td>
-        <td>{{ game.started }}</td>
+            <td>{{ game.display_type }}</td>
+            <td>{{ game.started }}</td>
       </tr>
       {% endfor %}
    </tbody>
 </table>
-
   {% else %}
     <p>Игры не найдены.</p>
   {% endif %}
 <h3><a href="{% url 'user_profile:profile' pk=user.pk %}">Назад</a></h3>
-</body>
 {% endblock %}
 
