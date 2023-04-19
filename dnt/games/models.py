@@ -85,5 +85,3 @@ class Game(models.Model):
     def get_time(self):
         return self.started.strftime("%Y-%m-%d/%H:%M")
 
-
-
